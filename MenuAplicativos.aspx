@@ -94,7 +94,7 @@
                         <asp:Button ID="btnFinanceiro" runat="server" Text="FINANCEIRO" CssClass="botao-menu" />
                     </asp:TableHeaderCell>
                     <asp:TableHeaderCell Width="34%">
-                        <asp:Button ID="btnProdutos" runat="server" Text="PRODUTOS" CssClass="botao-menu" />
+                        <asp:Button ID="btnProdutos" runat="server" Text="PRODUTOS" OnClick="btnProdutos_Click" CssClass="botao-menu" />
                     </asp:TableHeaderCell>
                     <asp:TableHeaderCell Width="33%">
                         <asp:Button ID="btnCalculadora" runat="server" Text="CALCULADORA DE PRECIFICAÇÃO" onClick="btnCalculadora_Click" CssClass="botao-menu" />

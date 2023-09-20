@@ -24,5 +24,10 @@ namespace GerenciamentoDoceria
         {
             Response.Redirect("CalculadoraPrecificacao.aspx");
         }
+
+        protected void btnProdutos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Produtos.aspx");
+        }
     }
 }
