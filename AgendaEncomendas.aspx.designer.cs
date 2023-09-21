@@ -11,7 +11,7 @@ namespace GerenciamentoDoceria
 {
 
 
-    public partial class Produtos
+    public partial class AgendaEncomendas
     {
 
         /// <summary>
@@ -60,13 +60,13 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.Button btnFiltrarBuscar;
 
         /// <summary>
-        /// Controle btnCadastrarProduto.
+        /// Controle btnCadastrarEncomenda.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrarProduto;
+        protected global::System.Web.UI.WebControls.Button btnCadastrarEncomenda;
 
         /// <summary>
         /// Controle imgMenu.
@@ -78,49 +78,49 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.Image imgMenu;
 
         /// <summary>
-        /// Controle lblCadastroProduto.
+        /// Controle lblCadastroEncomendas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCadastroProduto;
+        protected global::System.Web.UI.WebControls.Label lblCadastroEncomendas;
 
         /// <summary>
-        /// Controle txtData.
+        /// Controle txtId.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtData;
+        protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
-        /// Controle txtNomeProduto.
+        /// Controle txtNomeCliente.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeProduto;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeCliente;
 
         /// <summary>
-        /// Controle txtQuantidade.
+        /// Controle txtTelefoneWhasapp.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantidade;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefoneWhasapp;
 
         /// <summary>
-        /// Controle txtValor.
+        /// Controle txtDataEncomenda.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtValor;
+        protected global::System.Web.UI.WebControls.TextBox txtDataEncomenda;
 
         /// <summary>
         /// Controle btnFecharPopup.

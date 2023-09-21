@@ -114,13 +114,13 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.Table tbLinhaTerceira;
 
         /// <summary>
-        /// Controle btnOrcamento.
+        /// Controle btnVendas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOrcamento;
+        protected global::System.Web.UI.WebControls.Button btnVendas;
 
         /// <summary>
         /// Controle btnAgendaEncomendas.

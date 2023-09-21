@@ -11,7 +11,7 @@ namespace GerenciamentoDoceria
 {
 
 
-    public partial class Produtos
+    public partial class Financeiro
     {
 
         /// <summary>
@@ -60,13 +60,13 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.Button btnFiltrarBuscar;
 
         /// <summary>
-        /// Controle btnCadastrarProduto.
+        /// Controle btnCadastrarFinancas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrarProduto;
+        protected global::System.Web.UI.WebControls.Button btnCadastrarFinancas;
 
         /// <summary>
         /// Controle imgMenu.
@@ -78,13 +78,13 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.Image imgMenu;
 
         /// <summary>
-        /// Controle lblCadastroProduto.
+        /// Controle lblCadastroFinanca.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCadastroProduto;
+        protected global::System.Web.UI.WebControls.Label lblCadastroFinanca;
 
         /// <summary>
         /// Controle txtData.

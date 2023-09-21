@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Produtos.aspx.cs" Inherits="GerenciamentoDoceria.Produtos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgendaEncomendas.aspx.cs" Inherits="GerenciamentoDoceria.AgendaEncomendas" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Produtos</title>
+    <title>Agenda de Encomendas</title>
 
     <style>
         body {
@@ -24,7 +24,7 @@
 
         /* Estilo para a tabela */
         table {
-            width: 100%;
+            width: 200%;
             border-collapse: collapse;
             border: 2px solid #d295ec;
             font-family: Arial, sans-serif;
@@ -50,7 +50,7 @@
                 background-color: #e5e5e5;
             }
 
-        /* Estilo para o botão */
+        /* Estilo para o botão dentro do popup */
         .btn-ok {
             display: inline-block;
             padding: 10px 20px;
@@ -70,7 +70,7 @@
                 border: 1px solid #d295ec;
             }
 
-        .btn-cadastrarproduto {
+        .btn-cadastrarencomenda {
             display: flex;
             width: 250px;
             height: 60px;
@@ -85,7 +85,7 @@
             margin-top: 30px;
         }
 
-            .btn-cadastrarproduto:hover {
+            .btn-cadastrarencomenda:hover {
                 background-color: #f9f9f9;
                 border: 1px solid #d295ec;
             }
@@ -100,21 +100,28 @@
             width: 300px;
         }
 
-        .lbl-cadastroproduto {
+        .lbl-cadastroencomendas {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            font-family: nunito, sans-serif;
         }
 
-        .busca-cadastrar {
+        .buscar-cadastro {
             display: flex-inline;
             margin-top: 350px;
             align-items: center;
             margin-left: 10px;
         }
 
-        .btn-filtrarbuscar {
+        .imagem-menu {
+            width: 50px;
+            margin-left: 1200px;
+            cursor: pointer;
+        }
+
+        .btn-buscar {
             display: inline-block;
             padding: 8px 16px;
             font-size: 16px;
@@ -127,12 +134,6 @@
             border-radius: 20px;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
         }
-
-        .imagem-menu {
-            width: 50px;
-            margin-left: 1200px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -141,14 +142,21 @@
             <table>
                 <thead>
                     <tr>
-                        <th colspan="5">PRODUTOS</th>
+                        <th colspan="12">AGENDA DE ENCOMENDAS</th>
                     </tr>
                     <tr>
                         <th>ID</th>
-                        <th>Data</th>
-                        <th>Nome do Produto</th>
+                        <th style="width: 400px;">Nome do Cliente</th>
+                        <th>Telefone/whatsapp</th>
+                        <th>Data da Encomenda</th>
+                        <th style="width: 600px;">Nome do Produto(s)</th>
                         <th>Quantidade</th>
-                        <th>Valor</th>
+                        <th>Prazo de Entrega</th>
+                        <th>Valor da Encomenda</th>
+                        <th>Valor do Sinal</th>
+                        <th>Tipo de Pagamento</th>
+                        <th style="width: 200px;">Situação</th>
+                        <th>Data da Entrega</th>
 
                     </tr>
                 </thead>
@@ -156,40 +164,49 @@
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField HeaderText="ID" />
-                            <asp:BoundField HeaderText="Data" />
-                            <asp:BoundField HeaderText="Nome do Produto" />
+                            <asp:BoundField HeaderText="Nome do Cliente" ItemStyle-Width="400px" />
+                            <asp:BoundField HeaderText="Telefone/whatsapp" />
+                            <asp:BoundField HeaderText="Data da Encomenda" />
+                            <asp:BoundField HeaderText="Nome do Produto(s)" ItemStyle-Width="600px" />
                             <asp:BoundField HeaderText="Quantidade" />
-                            <asp:BoundField HeaderText="Valor" />
+                            <asp:BoundField HeaderText="Prazo de Entrega" />
+                            <asp:BoundField HeaderText="Valor da Encomenda" />
+                            <asp:BoundField HeaderText="Valor do Sinal" />
+                            <asp:BoundField HeaderText="Tipo de Pagamento" />
+                            <asp:BoundField HeaderText="Situação" ItemStyle-Width="200px" />
+                            <asp:BoundField HeaderText="Data da Entrega" />
                         </Columns>
                     </asp:GridView>
                 </tbody>
             </table>
         </div>
         <br />
-        <div class="busca-cadastrar">
+        <div class="buscar-cadastro">
             <div>
                 <asp:DropDownList ID="ddlFiltro" runat="server">
-                    <asp:ListItem Text="Nome do produto" Value="Opcao1"></asp:ListItem>
-                    <asp:ListItem Text="Data" Value="Opcao2"></asp:ListItem>
+                    <asp:ListItem Text="Nome do Cliente" Value="Opcao1"></asp:ListItem>
+                    <asp:ListItem Text="Nome do Produto(s)" Value="Opcao2"></asp:ListItem>
+                    <asp:ListItem Text="Data da Encomenda" Value="Opcao3"></asp:ListItem>
+                    <asp:ListItem Text="Situação" Value="Opcao4"></asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
-                <asp:Button ID="btnFiltrarBuscar" runat="server" Text="Filtrar/Buscar" CssClass="btn-filtrarbuscar" />
+                <asp:Button ID="btnFiltrarBuscar" runat="server" Text="Filtrar/Buscar" CssClass="btn-buscar" />
             </div>
             <div>
-                <asp:Button ID="btnCadastrarProduto" runat="server" Text="CADASTRAR NOVO PRODUTO" OnClientClick="return false;" CssClass="btn-cadastrarproduto" />
+                <asp:Button ID="btnCadastrarEncomenda" runat="server" Text="CADASTRAR NOVA ENCOMENDA" OnClientClick="return false;" CssClass="btn-cadastrarencomenda" />
                 <asp:Image ID="imgMenu" runat="server" ImageUrl="~/ImagensSistema/imagemMenu.png" ToolTip="Menu" CssClass="imagem-menu" />
             </div>
         </div>
         <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 60px; border: 1px solid #d295ec; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <asp:Label ID="lblCadastroProduto" runat="server" Text="CADASTRO DE PRODUTO" CssClass="lbl-cadastroproduto"></asp:Label>
+            <asp:Label ID="lblCadastroEncomendas" runat="server" Text="CADASTRO DE ENCOMENDAS" CssClass="lbl-cadastroencomendas"></asp:Label>
             <br />
-            <asp:TextBox ID="txtData" runat="server" PlaceHolder="Digite a data" CssClass="txt-cadastro"></asp:TextBox>
+            <asp:TextBox ID="txtId" runat="server" ReadOnly="true" CssClass="txt-cadastro"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtNomeProduto" runat="server" PlaceHolder="Digite o nome do produto" CssClass="txt-cadastro"></asp:TextBox>
+            <asp:TextBox ID="txtNomeCliente" runat="server" PlaceHolder="Digite o nome do cliente" CssClass="txt-cadastro"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtQuantidade" runat="server" PlaceHolder="Digite a quantidade" CssClass="txt-cadastro"></asp:TextBox>
+            <asp:TextBox ID="txtTelefoneWhasapp" runat="server" PlaceHolder="Digite o telefone/whatsapp" CssClass="txt-cadastro"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtValor" runat="server" PlaceHolder="Digite o valor do produto" CssClass="txt-cadastro"></asp:TextBox>
+            <asp:TextBox ID="txtDataEncomenda" runat="server" PlaceHolder="Digite a data da encomenda" CssClass="txt-cadastro"></asp:TextBox>
             <br />
             <asp:Button ID="btnFecharPopup" runat="server" Text="OK" OnClientClick="fecharPopup();" CssClass="btn-ok" />
         </div>

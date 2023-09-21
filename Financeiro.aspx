@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Produtos.aspx.cs" Inherits="GerenciamentoDoceria.Produtos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Financeiro.aspx.cs" Inherits="GerenciamentoDoceria.Financeiro" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Produtos</title>
-
-    <style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Financeiro</title>
+ <style>
         body {
             font-family: Arial, sans-serif;
             align-items: center;
@@ -70,7 +69,7 @@
                 border: 1px solid #d295ec;
             }
 
-        .btn-cadastrarproduto {
+        .btn-cadastrarfinanca {
             display: flex;
             width: 250px;
             height: 60px;
@@ -85,7 +84,7 @@
             margin-top: 30px;
         }
 
-            .btn-cadastrarproduto:hover {
+            .btn-cadastrarfinanca:hover {
                 background-color: #f9f9f9;
                 border: 1px solid #d295ec;
             }
@@ -100,7 +99,7 @@
             width: 300px;
         }
 
-        .lbl-cadastroproduto {
+        .lbl-cadastrofinanca {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -141,7 +140,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th colspan="5">PRODUTOS</th>
+                        <th colspan="5">FINANCEIRO</th>
                     </tr>
                     <tr>
                         <th>ID</th>
@@ -176,12 +175,12 @@
                 <asp:Button ID="btnFiltrarBuscar" runat="server" Text="Filtrar/Buscar" CssClass="btn-filtrarbuscar" />
             </div>
             <div>
-                <asp:Button ID="btnCadastrarProduto" runat="server" Text="CADASTRAR NOVO PRODUTO" OnClientClick="return false;" CssClass="btn-cadastrarproduto" />
+                <asp:Button ID="btnCadastrarFinancas" runat="server" Text="CADASTRAR NOVA FINANÇA" OnClientClick="return false;" CssClass="btn-cadastrarfinanca" />
                 <asp:Image ID="imgMenu" runat="server" ImageUrl="~/ImagensSistema/imagemMenu.png" ToolTip="Menu" CssClass="imagem-menu" />
             </div>
         </div>
         <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 60px; border: 1px solid #d295ec; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <asp:Label ID="lblCadastroProduto" runat="server" Text="CADASTRO DE PRODUTO" CssClass="lbl-cadastroproduto"></asp:Label>
+            <asp:Label ID="lblCadastroFinanca" runat="server" Text="CADASTRO DE FINANÇA" CssClass="lbl-cadastrofinanca"></asp:Label>
             <br />
             <asp:TextBox ID="txtData" runat="server" PlaceHolder="Digite a data" CssClass="txt-cadastro"></asp:TextBox>
             <br />

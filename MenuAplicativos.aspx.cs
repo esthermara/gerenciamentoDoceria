@@ -29,5 +29,20 @@ namespace GerenciamentoDoceria
         {
             Response.Redirect("Produtos.aspx");
         }
+
+        protected void btnAgendaEncomendas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgendaEncomendas.aspx");
+        }
+
+        protected void btnVendas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Vendas.aspx");
+        }
+
+        protected void btnFinanceiro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Financeiro.aspx");
+        }
     }
 }

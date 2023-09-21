@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Produtos.aspx.cs" Inherits="GerenciamentoDoceria.Produtos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Vendas.aspx.cs" Inherits="GerenciamentoDoceria.Vendas" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Produtos</title>
-
-    <style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Vendas</title>
+ <style>
         body {
             font-family: Arial, sans-serif;
             align-items: center;
@@ -50,66 +49,9 @@
                 background-color: #e5e5e5;
             }
 
-        /* Estilo para o botão */
-        .btn-ok {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            cursor: pointer;
-            background: linear-gradient(to right, #B782CE, #d295ec);
-            color: black;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
-        }
-
-            .btn-ok:hover {
-                background-color: #f9f9f9;
-                border: 1px solid #d295ec;
-            }
-
-        .btn-cadastrarproduto {
-            display: flex;
-            width: 250px;
-            height: 60px;
-            color: white;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
-            border-radius: 5px;
-            cursor: pointer;
-            background: linear-gradient(to right, #B782CE, #d295ec);
-            padding: 10px 20px;
-            border: none;
-            font-weight: bold;
-            margin-top: 30px;
-        }
-
-            .btn-cadastrarproduto:hover {
-                background-color: #f9f9f9;
-                border: 1px solid #d295ec;
-            }
-
-        .txt-cadastro {
-            border-radius: 10px;
-            padding: 5px;
-            border: 1px solid #d295ec;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            width: 300px;
-        }
-
-        .lbl-cadastroproduto {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
         .busca-cadastrar {
             display: flex-inline;
-            margin-top: 350px;
+            margin-top: 450px;
             align-items: center;
             margin-left: 10px;
         }
@@ -141,7 +83,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th colspan="5">PRODUTOS</th>
+                        <th colspan="5">VENDAS</th>
                     </tr>
                     <tr>
                         <th>ID</th>
@@ -176,32 +118,9 @@
                 <asp:Button ID="btnFiltrarBuscar" runat="server" Text="Filtrar/Buscar" CssClass="btn-filtrarbuscar" />
             </div>
             <div>
-                <asp:Button ID="btnCadastrarProduto" runat="server" Text="CADASTRAR NOVO PRODUTO" OnClientClick="return false;" CssClass="btn-cadastrarproduto" />
                 <asp:Image ID="imgMenu" runat="server" ImageUrl="~/ImagensSistema/imagemMenu.png" ToolTip="Menu" CssClass="imagem-menu" />
             </div>
         </div>
-        <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 60px; border: 1px solid #d295ec; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <asp:Label ID="lblCadastroProduto" runat="server" Text="CADASTRO DE PRODUTO" CssClass="lbl-cadastroproduto"></asp:Label>
-            <br />
-            <asp:TextBox ID="txtData" runat="server" PlaceHolder="Digite a data" CssClass="txt-cadastro"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtNomeProduto" runat="server" PlaceHolder="Digite o nome do produto" CssClass="txt-cadastro"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtQuantidade" runat="server" PlaceHolder="Digite a quantidade" CssClass="txt-cadastro"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtValor" runat="server" PlaceHolder="Digite o valor do produto" CssClass="txt-cadastro"></asp:TextBox>
-            <br />
-            <asp:Button ID="btnFecharPopup" runat="server" Text="OK" OnClientClick="fecharPopup();" CssClass="btn-ok" />
-        </div>
-        <script>
-            function abrirPopup() {
-                document.getElementById('popup').style.display = 'block';
-            }
-
-            function fecharPopup() {
-                document.getElementById('popup').style.display = 'none';
-            }
-        </script>
     </form>
 </body>
 </html>
