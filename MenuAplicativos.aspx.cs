@@ -44,5 +44,10 @@ namespace GerenciamentoDoceria
         {
             Response.Redirect("Financeiro.aspx");
         }
+
+        protected void btnEstoque_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estoque.aspx");
+        }
     }
 }

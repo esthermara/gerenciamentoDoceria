@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Financeiro</title>
- <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             align-items: center;
@@ -140,14 +140,17 @@
             <table>
                 <thead>
                     <tr>
-                        <th colspan="5">FINANCEIRO</th>
+                        <th colspan="8">FINANCEIRO</th>
                     </tr>
                     <tr>
                         <th>ID</th>
-                        <th>Data</th>
-                        <th>Nome do Produto</th>
-                        <th>Quantidade</th>
+                        <th>Categoria</th>
+                        <th>Descrição</th>
+                        <th>Vencimento</th>
+                        <th>Pessoa</th>
                         <th>Valor</th>
+                        <th>Valor devido</th>
+                        <th>Baixado</th>
 
                     </tr>
                 </thead>
@@ -155,10 +158,14 @@
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField HeaderText="ID" />
-                            <asp:BoundField HeaderText="Data" />
-                            <asp:BoundField HeaderText="Nome do Produto" />
-                            <asp:BoundField HeaderText="Quantidade" />
+                            <asp:BoundField HeaderText="Categoria" />
+                            <asp:BoundField HeaderText="Descrição" />
+                            <asp:BoundField HeaderText="Vencimento" />
+                            <asp:BoundField HeaderText="Pessoa" />
                             <asp:BoundField HeaderText="Valor" />
+                            <asp:BoundField HeaderText="Valor devido" />
+                            <asp:BoundField HeaderText="Baixado" />
+
                         </Columns>
                     </asp:GridView>
                 </tbody>

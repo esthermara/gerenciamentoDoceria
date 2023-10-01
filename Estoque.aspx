@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Produtos.aspx.cs" Inherits="GerenciamentoDoceria.Produtos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Estoque.aspx.cs" Inherits="GerenciamentoDoceria.Estoque" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PRODUTOS</title>
-
-    <style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+ <style>
         body {
             font-family: Arial, sans-serif;
             align-items: center;
@@ -141,12 +140,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th colspan="4">PRODUTOS</th>
+                        <th colspan="6">ESTOQUE</th>
                     </tr>
                     <tr>
                         <th>ID</th>
                         <th>Data</th>
+                        <th>Categoria</th>
                         <th>Nome do Produto</th>
+                        <th>Quantidade</th>
                         <th>Valor</th>
 
                     </tr>
@@ -156,7 +157,9 @@
                         <Columns>
                             <asp:BoundField HeaderText="ID" />
                             <asp:BoundField HeaderText="Data" />
+                            <asp:BoundField HeaderText="Categoria" />
                             <asp:BoundField HeaderText="Nome do Produto" />
+                            <asp:BoundField HeaderText="Quantidade" />
                             <asp:BoundField HeaderText="Valor" />
                         </Columns>
                     </asp:GridView>

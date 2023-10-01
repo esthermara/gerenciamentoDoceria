@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Estoque.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Financeiro.aspx" />
     <Content Include="Global.asax" />
@@ -149,7 +150,6 @@
     <Content Include="ImagensSistema\imagemSalvar.png" />
     <Content Include="Login.aspx" />
     <Content Include="MenuAplicativos.aspx" />
-    <Content Include="Orcamento.aspx" />
     <Content Include="Produtos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -262,6 +262,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Estoque.aspx.cs">
+      <DependentUpon>Estoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estoque.aspx.designer.cs">
+      <DependentUpon>Estoque.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Financeiro.aspx.cs">
       <DependentUpon>Financeiro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,13 +292,6 @@
     </Compile>
     <Compile Include="MenuAplicativos.aspx.designer.cs">
       <DependentUpon>MenuAplicativos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Orcamento.aspx.cs">
-      <DependentUpon>Orcamento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Orcamento.aspx.designer.cs">
-      <DependentUpon>Orcamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Produtos.aspx.cs">
       <DependentUpon>Produtos.aspx</DependentUpon>

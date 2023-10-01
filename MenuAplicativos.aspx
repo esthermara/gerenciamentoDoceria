@@ -53,7 +53,6 @@
         }
         
         .bem-vindo {
-            margin-left: 20px;
             font-size: large;
         }
 
@@ -66,6 +65,20 @@
             margin: 0;
         }
 
+         .btn-logout {
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url('./ImagensSistema/imagemLogin.png');
+            border: none;
+            cursor: pointer;
+            float: right;
+            margin-right: 30px;
+         }
+
     </style>
 </head>
 <body>
@@ -74,6 +87,7 @@
         <header>
             <div>
                 <asp:Label ID="lblBemvindo" runat="server" CssClass="bem-vindo"></asp:Label>
+                <asp:Button ID="btnLogout" runat="server" ToolTip="Sair" CssClass="btn-logout" />
             </div>
         </header>
         <div class="alinhamento-div">
@@ -123,7 +137,7 @@
                         <asp:Button ID="btnAgendaEncomendas" runat="server" Text="AGENDA DE ENCOMENDAS" OnClick="btnAgendaEncomendas_Click" CssClass="botao-menu" />
                     </asp:TableHeaderCell>
                     <asp:TableHeaderCell Width="33%">
-                        <asp:Button ID="btnEstoque" runat="server" Text="ESTOQUE" CssClass="botao-menu" />
+                        <asp:Button ID="btnEstoque" runat="server" Text="ESTOQUE" onClick="btnEstoque_Click" CssClass="botao-menu" />
                     </asp:TableHeaderCell>
                 </asp:TableHeaderRow>
             </asp:Table>

@@ -7,25 +7,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Caixa</title>
     <style>
-        body {
-            display:flex;
-            justify-content: center;
-            font-family: nunito, sans-serif;
-            background-color: white;
-            margin: 0;
+          body {
+            font-family: Arial, sans-serif;
             align-items: center;
             height: 100vh;
+            justify-content: center;
+            display: flex;
         }
 
-        p {
-            width: 1250px;
-            height: 200px;
-            border: 1px solid #d295ec;
-            border-radius: 10px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
-            cursor: pointer;
-            background-color: white;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #d295ec;
+            font-family: Arial, sans-serif;
         }
+
+            table th, table td {
+                border: 1px solid #d295ec;
+                padding: 10px;
+                text-align: center;
+            }
+
+            table th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+                color: #333;
+            }
+
+            table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            table tr:hover {
+                background-color: #e5e5e5;
+            }
 
         .conteudo-superior {
             flex-direction: column;
@@ -35,11 +50,11 @@
             color: #d295ec;
             margin-left: 600px;
         }
+
         .imagem-menu {
             width: 50px;
-            margin-left: 520px;
+            float: right;
             cursor: pointer;
-
         }
 
         .txt-id {
@@ -121,8 +136,8 @@
         }
 
         .conteudo-inferior {
-            display: flex-inline;
-            align-items: center;
+            margin-bottom: 10px;
+            width: 500px;
         }
 
         .btn-finalizar {
@@ -133,13 +148,14 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
             border-radius: 5px;
             cursor: pointer;
-            background:  linear-gradient(to right, #B782CE, #d295ec);
-            margin-left: 200px;
+            background: linear-gradient(to right, #B782CE, #d295ec);
+            margin-left: 500px;
         }
-        .btn-finalizar:hover {
-            background: white;
-            color: #d295ec;
-        }
+
+            .btn-finalizar:hover {
+                background: white;
+                color: #d295ec;
+            }
 
         .txt-valorfinal {
             background-color: #f9f9f9;
@@ -185,6 +201,7 @@
             border-radius: 10px;
             cursor: pointer;
         }
+
         .btnlimpar-item {
             width: 200px;
             height: 30px;
@@ -193,8 +210,7 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
             border-radius: 10px;
             cursor: pointer;
-            margin-left: 1000px;
-
+            margin-left: 100px;
         }
     </style>
 </head>
@@ -204,6 +220,7 @@
             <asp:Label ID="lblTituloCaixa" runat="server" Text="CAIXA" CssClass="lbl-caixa"></asp:Label>
             <asp:Image ID="imgMenu" runat="server" ImageUrl="~/ImagensSistema/imagemMenu.png" ToolTip="Menu" CssClass="imagem-menu" />
         </header>
+        <br />
         <div class="conteudo-superior">
             <asp:Label ID="lblId" runat="server" Text="ID:" Font-Bold="true"></asp:Label>
             <asp:TextBox ID="txtId" runat="server" ReadOnly="true" CssClass="txt-id"></asp:TextBox>
@@ -223,8 +240,35 @@
             <asp:Label ID="lblVaor" runat="server" Text="Valor Total R$:" Font-Bold="true"></asp:Label>
             <asp:TextBox ID="txtValor" runat="server" ReadOnly="true" CssClass="txt-valortotal"></asp:TextBox>
         </div>
-        <p>Aqui ficará a tabela</p>
-        <asp:Button ID="btnLimparItem" runat="server" Text="LIMPAR ITEM" CssClass="btnlimpar-item" />
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="5">ITENS</th>
+                    </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False">
+                        <Columns>
+                            <asp:BoundField HeaderText="ID" />
+                            <asp:BoundField HeaderText="Data" />
+                            <asp:BoundField HeaderText="Nome do Produto" />
+                            <asp:BoundField HeaderText="Quantidade" />
+                            <asp:BoundField HeaderText="Valor" />
+                        </Columns>
+                    </asp:GridView>
+                </tbody>
+            </table>
+        </div>
+        <br />
         <div class="conteudo-inferior">
             <asp:RadioButtonList ID="rblFormaPagamento" runat="server" RepeatDirection="Horizontal" CssClass="formas-pagamento">
                 <asp:ListItem Text="DINHEIRO" Value="0"></asp:ListItem>
@@ -232,9 +276,12 @@
                 <asp:ListItem Text="CRÉDITO" Value="2"></asp:ListItem>
                 <asp:ListItem Text="PIX" Value="3"></asp:ListItem>
             </asp:RadioButtonList>
+        </div>
+        <div>
             <asp:Label ID="lblValorFinal" runat="server" Text="VALOR FINAL R$:" Font-Bold="true"></asp:Label>
             <asp:TextBox ID="txtValorFinal" runat="server" ReadOnly="true" CssClass="txt-valorfinal"></asp:TextBox>
             <asp:Button ID="btnFinalizar" runat="server" Text="FINALIZAR" CssClass="btn-finalizar" Font-Bold="true" />
+            <asp:Button ID="btnLimparItem" runat="server" Text="LIMPAR ITEM" CssClass="btnlimpar-item" />
         </div>
         <br />
         <div style="border-top: 1px solid #d295ec; width: 100%"></div>

@@ -33,6 +33,15 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.Label lblBemvindo;
 
         /// <summary>
+        /// Controle btnLogout.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogout;
+
+        /// <summary>
         /// Controle tbImagem.
         /// </summary>
         /// <remarks>

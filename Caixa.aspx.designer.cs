@@ -168,13 +168,13 @@ namespace GerenciamentoDoceria
         protected global::System.Web.UI.WebControls.TextBox txtValor;
 
         /// <summary>
-        /// Controle btnLimparItem.
+        /// Controle GridView2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimparItem;
+        protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
         /// Controle rblFormaPagamento.
@@ -211,6 +211,15 @@ namespace GerenciamentoDoceria
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFinalizar;
+
+        /// <summary>
+        /// Controle btnLimparItem.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimparItem;
 
         /// <summary>
         /// Controle btnAbrir.
